@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cosmic-purple: #a855f7;
+  --cosmic-cyan: #06b6d4;
+  --cosmic-pink: #ec4899;
+  --cosmic-blue: #3b82f6;
+  --cosmic-green: #10b981;
+  --cosmic-orange: #f59e0b;
+  --cosmic-red: #ef4444;
+  
+  --navbar-bg: rgba(0, 0, 0, 0.8);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  
+  --transition-fast: 300ms;
+  --transition-medium: 400ms;
+  --transition-slow: 600ms;
+  
+  --shadow-glow: 0 0 20px rgba(168, 85, 247, 0.3);
+  --shadow-glow-cyan: 0 0 20px rgba(6, 182, 212, 0.3);
+  --shadow-depth: 4px 0 20px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--cosmic-purple), var(--cosmic-cyan));
+  border-radius: 4px;
+  transition: background var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #7c3aed, #0891b2);
+}
+
+/* Glass morphism effect */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+}
+
+/* Enhanced cosmic gradient backgrounds */
+.cosmic-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.cosmic-gradient-2 {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.cosmic-gradient-3 {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.cosmic-gradient-4 {
+  background: linear-gradient(135deg, var(--cosmic-purple) 0%, var(--cosmic-cyan) 100%);
+}
+
+/* Enhanced animation keyframes */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotateX(0deg); 
+  }
+  50% { 
+    transform: translateY(-20px) rotateX(5deg); 
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.7; 
+    transform: scale(1.05);
+  }
+}
+
+@keyframes rotate {
+  from { 
+    transform: rotate(0deg); 
+  }
+  to { 
+    transform: rotate(360deg); 
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% { 
+    opacity: 0.3; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.2);
+  }
+}
+
+@keyframes parallax-float {
+  0%, 100% { 
+    transform: translateY(0px) translateZ(0px); 
+  }
+  50% { 
+    transform: translateY(-15px) translateZ(10px); 
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { 
+    box-shadow: var(--shadow-glow);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.6), 0 0 60px rgba(168, 85, 247, 0.4);
+  }
+}
+
+/* Animation classes */
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.rotate {
+  animation: rotate 20s linear infinite;
+}
+
+.twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.parallax-float {
+  animation: parallax-float 8s ease-in-out infinite;
+}
+
+.glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* 3D transform utilities */
+.transform-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.perspective {
+  perspective: 1000px;
+}
+
+.perspective-origin-center {
+  perspective-origin: center center;
+}
+
+/* Enhanced glow effects */
+.glow-purple {
+  box-shadow: var(--shadow-glow);
+  transition: box-shadow var(--transition-medium);
+}
+
+.glow-purple:hover {
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.5), 0 0 50px rgba(168, 85, 247, 0.3);
+}
+
+.glow-cyan {
+  box-shadow: var(--shadow-glow-cyan);
+  transition: box-shadow var(--transition-medium);
+}
+
+.glow-cyan:hover {
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.5), 0 0 50px rgba(6, 182, 212, 0.3);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.5), 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(6, 182, 212, 0.5), 0 0 20px rgba(6, 182, 212, 0.3);
+}
+
+/* Depth and layering */
+.depth-1 {
+  transform: translateZ(10px);
+}
+
+.depth-2 {
+  transform: translateZ(20px);
+}
+
+.depth-3 {
+  transform: translateZ(30px);
+}
+
+/* Navbar specific styles */
+.navbar-item {
+  transition: all var(--transition-fast) cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: left center;
+}
+
+.navbar-item:hover {
+  transform: scale(1.05) translateX(5px) translateZ(5px);
+}
+
+.navbar-item.active {
+  transform: scale(1.02) translateZ(3px);
+}
+
+/* Enhanced focus styles */
+input:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+  border-color: var(--cosmic-purple);
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.1), var(--shadow-glow);
+  transform: translateZ(2px);
+}
+
+/* Smooth transitions for all interactive elements */
+button,
+a,
+input,
+textarea,
+.interactive {
+  transition: all var(--transition-fast) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover states for cards and interactive elements */
+.card-3d {
+  transition: all var(--transition-medium) cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+  transform: rotateX(5deg) rotateY(5deg) translateZ(10px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(168, 85, 247, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Parallax sections */
+.parallax-section {
+  transform-style: preserve-3d;
+  transition: transform var(--transition-slow) ease-out;
+}
+
+/* Performance optimizations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Responsive design enhancements */
+@media (max-width: 1024px) {
+  .card-3d:hover {
+    transform: scale(1.02) translateZ(5px);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --transition-fast: 200ms;
+    --transition-medium: 300ms;
+  }
+  
+  .card-3d:hover {
+    transform: scale(1.01);
+  }
+  
+  .navbar-item:hover {
+    transform: scale(1.02) translateX(2px);
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .float,
+  .pulse,
+  .rotate,
+  .twinkle,
+  .parallax-float,
+  .glow-pulse {
+    animation: none;
+  }
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+  transition: opacity var(--transition-medium);
+}
+
+/* Custom selection colors */
+::selection {
+  background: rgba(168, 85, 247, 0.3);
+  color: white;
+}
+
+::-moz-selection {
+  background: rgba(168, 85, 247, 0.3);
+  color: white;
+}
